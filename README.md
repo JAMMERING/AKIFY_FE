@@ -67,13 +67,6 @@
 
 - **yarn 명령어 예시**
 
-### React
-```
-yarn install # 전체 설치
-yarn add 라이브러리 # 라이브러리 설치
-yarn dev # 실행
-```
-
 ### React Native
 ```
 yarn install # 전체 설치
