@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import BootSplash from 'react-native-bootsplash';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 function App() {
+  useEffect(() => {
+    BootSplash.hide();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
