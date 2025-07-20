@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello Jammering</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <Text>Hello Jammering</Text>
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

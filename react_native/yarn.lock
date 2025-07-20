@@ -8020,6 +8020,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-safe-area-context@npm:^5.5.2":
+  version: 5.5.2
+  resolution: "react-native-safe-area-context@npm:5.5.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/529cafcafbc1d994f6d9c9be41ae4f78768b7c103a22265d3fe5223a930249e0a07a934b5ec358ce510622061f339a20c2147b620bd15032366b12b4258c2ce5
+  languageName: node
+  linkType: hard
+
 "react-native-svg-transformer@npm:^1.5.1":
   version: 1.5.1
   resolution: "react-native-svg-transformer@npm:1.5.1"
@@ -8151,6 +8161,7 @@ __metadata:
     prettier: "npm:2.8.8"
     react: "npm:19.1.0"
     react-native: "npm:^0.80.1"
+    react-native-safe-area-context: "npm:^5.5.2"
     react-native-svg: "npm:^15.12.0"
     react-native-svg-transformer: "npm:^1.5.1"
     react-test-renderer: "npm:19.1.0"
