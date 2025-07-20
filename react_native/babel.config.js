@@ -1,5 +1,4 @@
 module.exports = {
-
   presets: ['@react-native/babel-preset'],
   plugins: [
     [
@@ -9,6 +8,7 @@ module.exports = {
         alias: {
           '@': './src',
         },
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
     ],
   ],
