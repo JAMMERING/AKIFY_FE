@@ -7,11 +7,19 @@ interface OverlayProps {
     children?: React.ReactNode;
 }
 
+<<<<<<< HEAD
 const Overlay = ({
     visible,
     onClose,
     children,
 }: OverlayProps) => {
+=======
+const Overlay: React.FC<OverlayProps> = ({
+    visible,
+    onClose,
+    children,
+}) => {
+>>>>>>> ae18871 ([feat] overlay component)
     return (
         <Modal
             transparent
