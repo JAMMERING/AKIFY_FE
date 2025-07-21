@@ -14,16 +14,18 @@ type ChipVariant =
 type ChipSize = 'small' | 'medium';
 
 interface ChipProps {
+  icon?: React.ReactNode;
   text: string;
   variant?: ChipVariant;
   size?: ChipSize;
 }
 
-function Chip({ text, variant = 'default', size = 'small' }: ChipProps) {
+function Chip({ icon, text, variant = 'default', size = 'small' }: ChipProps) {
   return (
     <View style={[styles.chipBase, variantStyles[variant], sizeStyles[size]]}>
+      {icon}
       <Text
-        style={[styles.textBase, textStyles[variant], textSizeStyles[size]]}
+        style={[styles.textBase, variantStyles[variant], textSizeStyles[size]]}
       >
         {text}
       </Text>
@@ -38,6 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'flex-start',
     borderRadius: semanticNumber.borderRadius.sm,
+    gap: 2,
   },
   textBase: {
     fontFamily: fonts.family.medium,
@@ -47,41 +50,26 @@ const styles = StyleSheet.create({
 const variantStyles = StyleSheet.create({
   condition: {
     backgroundColor: semanticColor.chip.condition,
-  },
-  default: {
-    backgroundColor: semanticColor.chip.default,
-  },
-  darkBrand: {
-    backgroundColor: semanticColor.chip.dark,
-  },
-  red: {
-    backgroundColor: semanticColor.chip.red,
-  },
-  brand: {
-    backgroundColor: semanticColor.chip.delivery,
-  },
-  dark: {
-    backgroundColor: semanticColor.chip.dark,
-  },
-});
-
-const textStyles = StyleSheet.create({
-  condition: {
     color: semanticColor.text.chipCondition,
   },
   default: {
+    backgroundColor: semanticColor.chip.default,
     color: semanticColor.text.chipDefault,
   },
   darkBrand: {
+    backgroundColor: semanticColor.chip.dark,
     color: semanticColor.text.chipDark,
   },
   red: {
+    backgroundColor: semanticColor.chip.red,
     color: semanticColor.text.chipRed,
   },
   brand: {
+    backgroundColor: semanticColor.chip.delivery,
     color: semanticColor.text.chipDelivery,
   },
   dark: {
+    backgroundColor: semanticColor.chip.dark,
     color: semanticColor.text.primaryOnDark,
   },
 });
