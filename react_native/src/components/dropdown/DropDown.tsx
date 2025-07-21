@@ -1,13 +1,18 @@
 import React,{useState} from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-// import Arrow_down from '@/assets/icons/arrow_down.svg'; 
-// import Arrow_up from '@/assets/icons/arrow_up.svg';
+import Arrow_down from '@/assets/icons/arrow_down.svg'; 
+import Arrow_up from '@/assets/icons/arrow_up.svg';
+import Plus from '@/assets/icons/plus.svg';
 type DropDownProps<T> = {
+    isSelected?: boolean;
+    isPlused?: boolean;
     placeholder: string;
     title: string;
 };
 
 function DropDown<T>({
+    isSelected = false,
+    isPlused = false,
     title,
     placeholder = 'Select an option',
 }: DropDownProps<T>) {
@@ -19,7 +24,8 @@ function DropDown<T>({
                 <Text style={styles.selectedText}>
                     {placeholder}
                 </Text>
-                {/* <Arrow_down/> */}
+                {isSelected && !isPlused ? <Arrow_up /> : <Arrow_down />}
+                {isSelected && isPlused && <Plus />}
             </View>
         </TouchableOpacity>
     );
