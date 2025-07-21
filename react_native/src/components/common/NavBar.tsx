@@ -1,12 +1,8 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import HomeIconOn from '@/assets/IconHomeOn.svg';
-import HomeIconOff from '@/assets/IconHomeOff.svg';
-import CompassIconOn from '@/assets/IconCompassOn.svg';
-import CompassIconOff from '@/assets/IconCompassOff.svg';
-import ChatIconOn from '@/assets/IconChatOn.svg';
-import ChatIconOff from '@/assets/IconChatOff.svg';
-import UserIconOn from '@/assets/IconUserOn.svg';
-import UserIconOff from '@/assets/IconUserOff.svg';
+import HomeIcon from '@assets/icons/IconHomeFilled.svg';
+import CompassIcon from '@assets/icons/IconCompassFilled.svg';
+import ChatIcon from '@assets/icons/IconMessageCircleFilled.svg';
+import UserIcon from '@assets/icons/IconUserFilled.svg';
 import { fonts } from '@/styles/fonts';
 import { semanticColor } from '@/styles/semantic-color';
 import { useState } from 'react';
@@ -20,7 +16,7 @@ function NavBar() {
   return (
     <View style={styles.navBarWrapper}>
       <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('home')}>
-        {selected === 'home' ? <HomeIconOn /> : <HomeIconOff />}
+        <HomeIcon fill={selected === 'home' ? semanticColor.icon.primary : semanticColor.icon.lightest} />
         <Text
           style={[
             styles.text,
@@ -32,7 +28,10 @@ function NavBar() {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('explore')}>
-        {selected === 'explore' ? <CompassIconOn /> : <CompassIconOff />}
+        <CompassIcon
+          fill={selected === 'explore' ? semanticColor.icon.primary : semanticColor.icon.lightest}
+          color={selected === 'explore' ? semanticColor.icon.primary : semanticColor.icon.lightest}
+        />
         <Text
           style={[
             styles.text,
@@ -44,7 +43,7 @@ function NavBar() {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('chatting')}>
-        {selected === 'chatting' ? <ChatIconOn /> : <ChatIconOff />}
+        <ChatIcon fill={selected === 'chatting' ? semanticColor.icon.primary : semanticColor.icon.lightest} />
         <Text
           style={[
             styles.text,
@@ -56,7 +55,7 @@ function NavBar() {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('my')}>
-        {selected === 'my' ? <UserIconOn /> : <UserIconOff />}
+        <UserIcon fill={selected === 'my' ? semanticColor.text.primary : semanticColor.text.lightest} />
         <Text
           style={[
             styles.text,
