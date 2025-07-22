@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     paddingVertical: 24,
     width: Dimensions.get('window').width - 32,
     borderRadius: semanticNumber.borderRadius.lg,
-    backgroundColor: 'white',
   },
   profileImageWrapper: {
     width: 48,

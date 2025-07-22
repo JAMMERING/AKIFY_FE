@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     gap: semanticNumber.spacing[12],
     width: Dimensions.get('window').width - 32,
     borderRadius: semanticNumber.borderRadius.lg,
-    backgroundColor: 'white',
   },
   userInfoWrapper: {
     flexDirection: 'row',

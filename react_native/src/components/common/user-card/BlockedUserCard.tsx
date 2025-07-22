@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width - 32,
     gap: semanticNumber.spacing[12],
     borderRadius: semanticNumber.borderRadius.lg,
-    backgroundColor: 'white',
   },
   userInfoWrapper: {
     flex: 1,
