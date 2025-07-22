@@ -7,7 +7,7 @@ type NoResultSectionProps = {
   emoji: React.ReactNode;
   title: string;
   description: string;
-  button: React.ReactNode;
+  button?: React.ReactNode;
 };
 
 // button 부분은 버튼 컴포넌트 사용
