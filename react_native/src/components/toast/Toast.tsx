@@ -3,20 +3,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import { semanticNumber } from '@/styles/semantic-number';
 import { semanticColor } from '@/styles/semantic-color';
 import { fonts } from '@/styles/fonts';
-import Bell from '@/assets/icons/bell.svg';
+import { type EmojiName, renderEmoji } from '@/components/toast/SvgMap';
 interface ToastProps {
   message: string;
   visible: boolean;
-  // image : string;
-  duration?: number; // Duration in milliseconds, default is 3000ms
+  image: EmojiName;
+  duration?: number;
 }
 const ANIMATION_DURATION = 250;
 
-const Toast = ({ message, visible, duration = 1000 }: ToastProps) => {
+const Toast = ({ message, visible, duration = 1000, image }: ToastProps) => {
   const translateY = useRef(new Animated.Value(-10)).current;
   const opacity = useRef(new Animated.Value(0)).current;
   const [shouldRender, setShouldRender] = useState(visible);
-
+  const Emoji = renderEmoji(image);
   useEffect(() => {
     if (visible) {
       setShouldRender(true);
@@ -57,10 +57,9 @@ const Toast = ({ message, visible, duration = 1000 }: ToastProps) => {
   if (!shouldRender) return null;
   return (
     <View style={styles.fakecontainer}>
-      <Animated.View style={[styles.container, { transform: [{ translateY }], opacity }]}>
+      <Animated.View style={{ transform: [{ translateY }], opacity }}>
         <View style={styles.container}>
-          <Bell width={24} height={24} />
-          <Text style={styles.text}>{message}</Text>
+          {renderEmoji(image, { width: 16, height: 16 })} <Text style={styles.text}>{message}</Text>
         </View>
       </Animated.View>
     </View>
@@ -80,7 +79,7 @@ const styles = StyleSheet.create({
     minHeight: semanticNumber.spacing[44],
     paddingVertical: semanticNumber.spacing.none,
     paddingHorizontal: semanticNumber.spacing[12],
-    columnGap: semanticNumber.spacing[36],
+    columnGap: semanticNumber.spacing[4],
     borderRadius: semanticNumber.borderRadius.xl,
     backgroundColor: semanticColor.toast.surface,
     shadowColor: semanticColor.toast.shadow,

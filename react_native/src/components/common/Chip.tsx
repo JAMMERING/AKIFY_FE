@@ -19,7 +19,6 @@ function Chip({ icon, text, variant = 'default', size = 'small' }: ChipProps) {
     <View style={[styles.chipBase, variantStyles[variant], sizeStyles[size]]}>
       {icon}
       <Text style={[styles.textBase, variantStyles[variant], textSizeStyles[size]]}>{text}</Text>
-
     </View>
   );
 }
