@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet, Modal, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import X from '@/assets/icons/X.svg';
 import EffectType from '@/components/common/bottom-sheet/bottom-sheet-contents/EffectType';
 import { semanticColor } from '@/styles/semantic-color';
 import { fonts } from '@/styles/fonts';
 import { semanticNumber } from '@/styles/semantic-number';
-import MainButton from '@/components/common/button/MainButton';
+import SelectBrand from './bottom-sheet-contents/SelectBrand';
 interface BottomSheetProps {
   visible: boolean;
   onClose: () => void;
-  title: string;
+  title: '이펙터 타입' | '브랜드 선택' | '지역 선택';
 }
 
 const BottomSheet = ({ visible, onClose, title }: BottomSheetProps) => {
@@ -22,7 +22,8 @@ const BottomSheet = ({ visible, onClose, title }: BottomSheetProps) => {
             <X width={24} height={24} />
           </View>
           <View style={styles.content}>
-            <EffectType onPress={onClose} />
+            {title === '이펙터 타입' && <EffectType onPress={onClose} />}
+            {title=== '브랜드 선택' && <SelectBrand />}
           </View>
         </>
       )} 
