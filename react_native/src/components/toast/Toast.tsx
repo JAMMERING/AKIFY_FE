@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { semanticNumber } from '@/styles/semantic-number';
 import { semanticColor } from '@/styles/semantic-color';
 import { fonts } from '@/styles/fonts';
-
+import Bell from '@/assets/icons/bell.svg';
 interface ToastProps {
   message: string;
   visible: boolean;
@@ -59,7 +59,7 @@ const Toast = ({ message, visible, duration = 1000 }: ToastProps) => {
     <View style={styles.fakecontainer}>
       <Animated.View style={[styles.container, { transform: [{ translateY }], opacity }]}>
         <View style={styles.container}>
-          {/* <Image source={{ uri: image }} style={styles.image} /> */}
+          <Bell width={24} height={24} />
           <Text style={styles.text}>{message}</Text>
         </View>
       </Animated.View>
