@@ -8,6 +8,7 @@ interface OverlayProps {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Overlay = ({
     visible,
     onClose,
@@ -20,6 +21,13 @@ const Overlay: React.FC<OverlayProps> = ({
     children,
 }) => {
 >>>>>>> ae18871 ([feat] overlay component)
+=======
+const Overlay = ({
+    visible,
+    onClose,
+    children,
+}: OverlayProps) => {
+>>>>>>> 292f1d5 ([style] review 반영)
     return (
         <Modal
             transparent
