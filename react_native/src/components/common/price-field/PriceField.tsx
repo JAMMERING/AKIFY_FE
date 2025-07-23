@@ -22,7 +22,8 @@ const PriceField: React.FC<PriceFieldProps> = ({
 	label = '가격',
 }) => {
 const isError = Number(value) < maxValue && Number(value) != 0;	
-return (<View style={styles.column}>
+return (
+    <View style={styles.column}>
 		<View style={[styles.container,isError? borderStyle.error : borderStyle.default]}>
 			<Text style={styles.label}>{label}</Text>
             <View style={styles.priceGroup}>
