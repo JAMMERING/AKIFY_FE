@@ -26,6 +26,7 @@ const semanticNumber = {
     8: numbers[8],
     12: numbers[12],
     16: numbers[16],
+    18: numbers[18],
     20: numbers[20],
     22: numbers[22],
     24: numbers[24],
