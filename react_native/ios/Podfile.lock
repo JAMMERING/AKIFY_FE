@@ -1648,7 +1648,6 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - SocketRocket
-<<<<<<< HEAD
   - react-native-safe-area-context (5.5.2):
     - boost
     - DoubleConversion
@@ -1739,8 +1738,6 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-=======
->>>>>>> 6e4944c ([init] android 실행 여부)
   - React-NativeModulesApple (0.80.1):
     - boost
     - DoubleConversion
@@ -2215,7 +2212,6 @@ PODS:
     - React-perflogger (= 0.80.1)
     - React-utils (= 0.80.1)
     - SocketRocket
-<<<<<<< HEAD
   - RNBootSplash (6.3.10):
     - boost
     - DoubleConversion
@@ -2304,8 +2300,6 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-=======
->>>>>>> 6e4944c ([init] android 실행 여부)
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
 
