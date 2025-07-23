@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-
     zIndex: 1000,
     flexDirection: 'row',
     minHeight: semanticNumber.spacing[44],
@@ -88,6 +87,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
     shadowRadius: semanticNumber.borderRadius.md,
+
     elevation: 4,
   },
 
