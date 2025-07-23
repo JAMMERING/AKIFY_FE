@@ -3,11 +3,12 @@ import { View, StyleSheet, Modal } from 'react-native';
 import { semanticColor } from '@/styles/semantic-color';
 
 interface OverlayProps {
-    visible: boolean;
-    onClose?: () => void;
-    children?: React.ReactNode;
+  visible: boolean;
+  onClose?: () => void;
+  children?: React.ReactNode;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const Overlay = ({
@@ -40,14 +41,23 @@ const Overlay = ({
         </Modal>
     );
 }; 
+=======
+const Overlay = ({ visible, onClose, children }: OverlayProps) => {
+  return (
+    <Modal transparent visible={visible} onRequestClose={onClose}>
+      <View style={styles.container}>{children}</View>
+    </Modal>
+  );
+};
+>>>>>>> c4367bb (style: prettier 적용)
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: semanticColor.overlay.black25,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: semanticColor.overlay.black25,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default Overlay;
