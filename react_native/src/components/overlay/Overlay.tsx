@@ -11,6 +11,7 @@ interface OverlayProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Overlay = ({
     visible,
     onClose,
@@ -42,6 +43,8 @@ const Overlay = ({
     );
 }; 
 =======
+=======
+>>>>>>> 9aa4b22 (style: refactory prettier)
 const Overlay = ({ visible, onClose, children }: OverlayProps) => {
   return (
     <Modal transparent visible={visible} onRequestClose={onClose}>
@@ -49,12 +52,20 @@ const Overlay = ({ visible, onClose, children }: OverlayProps) => {
     </Modal>
   );
 };
+<<<<<<< HEAD
 >>>>>>> c4367bb (style: prettier 적용)
+=======
+>>>>>>> 9aa4b22 (style: refactory prettier)
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     backgroundColor: semanticColor.overlay.black25,
+=======
+    backgroundColor: 'var(--surface-alpha-black-light, rgba(0, 0, 0, 0.25))',
+
+>>>>>>> 9aa4b22 (style: refactory prettier)
     justifyContent: 'center',
     alignItems: 'center',
   },
