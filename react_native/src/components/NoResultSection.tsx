@@ -3,12 +3,12 @@ import { semanticColor } from '@/styles/semantic-color';
 import { semanticNumber } from '@/styles/semantic-number';
 import { StyleSheet, Text, View } from 'react-native';
 
-type NoResultSectionProps = {
+interface NoResultSectionProps {
   emoji: React.ReactNode;
   title: string;
   description: string;
   button?: React.ReactNode;
-};
+}
 
 // button 부분은 버튼 컴포넌트 사용
 function NoResultSection({ emoji, title, description, button }: NoResultSectionProps) {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   noResultSection: {
     alignItems: 'center',
     paddingVertical: 64,
-    gap: 24,
+    gap: semanticNumber.spacing[24],
   },
   infoWrapper: {
     alignItems: 'center',
