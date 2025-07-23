@@ -3,13 +3,13 @@ import { semanticColor } from '@/styles/semantic-color';
 import { semanticNumber } from '@/styles/semantic-number';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-type CustomerServiceProps = {
+interface CustomerServiceProps {
   infoIcon: React.ReactNode;
   title: string;
   subTitle: string;
   buttonIcon?: React.ReactNode;
   onPress: () => void;
-};
+}
 
 function CustomerService({ infoIcon, title, subTitle, buttonIcon, onPress }: CustomerServiceProps) {
   return (
