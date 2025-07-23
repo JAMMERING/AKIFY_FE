@@ -133,6 +133,12 @@ const semanticColor = {
 
   toast: {
     default: colors.alpha.black90,
+    surface: colors.neutral[800],
+    shadow: colors.alpha.black8,
+    text: colors.neutral.white,
+  },
+  overlay: {
+    black25: colors.alpha.black25,
   },
 
   reference: {

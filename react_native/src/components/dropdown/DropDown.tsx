@@ -1,8 +1,12 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Arrow_down from '@/assets/icons/arrow_down.svg'; 
 import Arrow_up from '@/assets/icons/arrow_up.svg';
 import Plus from '@/assets/icons/plus.svg';
+import { semanticColor } from '@/styles/semantic-color';
+import { semanticNumber } from '@/styles/semantic-number';
+import { fonts } from '@/styles/fonts';
+
 type DropDownProps<T> = {
     isSelected?: boolean;
     isPlused?: boolean;
@@ -35,19 +39,17 @@ const styles = StyleSheet.create({
     container: { 
         width: 358,
         flexDirection: 'row',
-        paddingVertical: 14,
-        paddingHorizontal: 16,
+        paddingVertical: semanticNumber.spacing[14],
+    paddingHorizontal: semanticNumber.spacing[16],
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#F5F5F5',
+        backgroundColor: semanticColor.surface.white,
      },
     title: {
-        color: '#1E1E1F',
-        fontFamily: 'Pretendard',
+        color: semanticColor.text.primary,
+        fontFamily: fonts.family.semibold,
         fontSize: 17,
-        fontStyle: 'normal',
-        fontWeight: '600',
-        lineHeight: 24,
+        lineHeight: semanticNumber.spacing[24],
         letterSpacing: 0,
     },
     selector: {
@@ -56,12 +58,10 @@ const styles = StyleSheet.create({
         columnGap: 4,
     },
     selectedText: {
-        color: '#1E1E1F',
-        fontFamily: 'Pretendard',
+        color: semanticColor.text.primary,
+        fontFamily: fonts.family.medium,
         fontSize: 15,
-        fontStyle: 'normal',
-        fontWeight: '500',
-        lineHeight: 22,
+        lineHeight: semanticNumber.spacing[22],
         letterSpacing: 0,
     },
 
