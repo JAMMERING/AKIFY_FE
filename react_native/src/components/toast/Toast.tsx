@@ -1,5 +1,9 @@
 import { View, Text, StyleSheet, Animated } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
+import { semanticNumber } from '@/styles/semantic-number';
+import { semanticColor } from '@/styles/semantic-color';
+import { fonts } from '@/styles/fonts';
+
 interface ToastProps {
     message: string;
     visible: boolean;
@@ -77,34 +81,30 @@ const styles = StyleSheet.create({
 
         zIndex: 1000,
         flexDirection: 'row',             
-        minHeight: 44,
-        paddingVertical: 0,               
-        paddingHorizontal: 12,           
-        columnGap: 32,
-
-        borderRadius: 16,                     
-        backgroundColor: '#3B3B3B',
-
-        shadowColor: 'rgba(0, 0, 0, 0.08)',  
+        minHeight: semanticNumber.spacing[44],
+        paddingVertical: semanticNumber.spacing.none,               
+        paddingHorizontal: semanticNumber.spacing[12],           
+        columnGap: semanticNumber.spacing[36],
+        borderRadius: semanticNumber.borderRadius.xl,                     
+        backgroundColor: semanticColor.toast.surface,
+        shadowColor: semanticColor.toast.shadow,  
         shadowOffset: {width: 0, height: 0},
         shadowOpacity: 1,
-        shadowRadius: 8,    
-        elevation: 4,                      
+        shadowRadius: semanticNumber.borderRadius.md,
+        elevation: 4,
       },
     
       
     toast: {
         flexDirection: 'row',
         alignItems: 'center',
-        columnGap: 4,
+        columnGap: semanticNumber.spacing[4],
     },
     text: {
-        color: '#FFF',
-        fontFamily: 'Pretendard',
+        color: semanticColor.toast.text,
+        fontFamily: fonts.family.medium,
         fontSize: 15,
-        fontStyle: 'normal',
-        fontWeight: '500',
-        lineHeight: 22,
+        lineHeight: semanticNumber.spacing[22],
         letterSpacing: 0,
     },
 });
