@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-react_native.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-react_native.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		311A35F85747483891DB926C /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80A07FB1A36A434D97838434 /* Pretendard-ExtraLight.ttf */; };
-		58C33EF68F4E45E181A13435 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60A9B2DA57B74967A0286218 /* Pretendard-Black.ttf */; };
-		64CC56D693194C69803E6012 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 378E150ACFB540B29C218343 /* Pretendard-Regular.ttf */; };
-		69AA771BDFF9417E9FA0ADF8 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E47EA6B75134F04916BF0FB /* Pretendard-SemiBold.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		807CA469F56D4FAE8A8DE986 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7357057D0DB546538229F843 /* Pretendard-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -202,18 +198,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				58C33EF68F4E45E181A13435 /* Pretendard-Black.ttf in Resources */,
-				A76DE1A42B174CFE94DB2D54 /* Pretendard-Bold.ttf in Resources */,
-				EA6BFEAED7FB4287BA8AA8C7 /* Pretendard-ExtraBold.ttf in Resources */,
-				311A35F85747483891DB926C /* Pretendard-ExtraLight.ttf in Resources */,
-				F77834520B7640D285B77465 /* Pretendard-Light.ttf in Resources */,
-				8DE15C673F51492999411018 /* Pretendard-Medium.ttf in Resources */,
-				64CC56D693194C69803E6012 /* Pretendard-Regular.ttf in Resources */,
-				69AA771BDFF9417E9FA0ADF8 /* Pretendard-SemiBold.ttf in Resources */,
-				807CA469F56D4FAE8A8DE986 /* Pretendard-Thin.ttf in Resources */,
-				BA895831E568EA33B562E1BE /* PrivacyInfo.xcprivacy in Resources */,
-				A06ED59E6F514E1BA4CD2970 /* BootSplash.storyboard in Resources */,
-				D1D01C1911B34B49AC1A4410 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
