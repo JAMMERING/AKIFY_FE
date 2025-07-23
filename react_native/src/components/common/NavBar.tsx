@@ -6,8 +6,16 @@ import UserIcon from '@assets/icons/IconUserFilled.svg';
 import { fonts } from '@/styles/fonts';
 import { semanticColor } from '@/styles/semantic-color';
 import { useState } from 'react';
+import { SvgProps } from 'react-native-svg';
 
 type TabType = 'home' | 'explore' | 'chatting' | 'my';
+
+const tabs: { key: TabType; label: string; Icon: React.FC<SvgProps> }[] = [
+  { key: 'home', label: '홈', Icon: HomeIcon },
+  { key: 'explore', label: '둘러보기', Icon: CompassIcon },
+  { key: 'chatting', label: '채팅', Icon: ChatIcon },
+  { key: 'my', label: '마이', Icon: UserIcon },
+];
 
 // 페이지 만들어지고 Navigation 구현 후 onPress 수정
 function NavBar() {
@@ -15,57 +23,18 @@ function NavBar() {
 
   return (
     <View style={styles.navBarWrapper}>
-      <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('home')}>
-        <HomeIcon fill={selected === 'home' ? semanticColor.icon.primary : semanticColor.icon.lightest} />
-        <Text
-          style={[
-            styles.text,
-            {
-              color: selected === 'home' ? semanticColor.text.primary : semanticColor.text.lightest,
-            },
-          ]}>
-          홈
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('explore')}>
-        <CompassIcon
-          fill={selected === 'explore' ? semanticColor.icon.primary : semanticColor.icon.lightest}
-          color={selected === 'explore' ? semanticColor.icon.primary : semanticColor.icon.lightest}
-        />
-        <Text
-          style={[
-            styles.text,
-            {
-              color: selected === 'explore' ? semanticColor.text.primary : semanticColor.text.lightest,
-            },
-          ]}>
-          둘러보기
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('chatting')}>
-        <ChatIcon fill={selected === 'chatting' ? semanticColor.icon.primary : semanticColor.icon.lightest} />
-        <Text
-          style={[
-            styles.text,
-            {
-              color: selected === 'chatting' ? semanticColor.text.primary : semanticColor.text.lightest,
-            },
-          ]}>
-          채팅
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.buttonWrapper} onPress={() => setSelected('my')}>
-        <UserIcon fill={selected === 'my' ? semanticColor.text.primary : semanticColor.text.lightest} />
-        <Text
-          style={[
-            styles.text,
-            {
-              color: selected === 'my' ? semanticColor.text.primary : semanticColor.text.lightest,
-            },
-          ]}>
-          마이
-        </Text>
-      </TouchableOpacity>
+      {tabs.map(({ key, label, Icon }) => {
+        const isSelected = selected === key;
+        const iconColor = isSelected ? semanticColor.icon.primary : semanticColor.icon.lightest;
+        const textColor = isSelected ? semanticColor.text.primary : semanticColor.text.lightest;
+
+        return (
+          <TouchableOpacity key={key} style={styles.buttonWrapper} onPress={() => setSelected(key)}>
+            <Icon fill={iconColor} color={iconColor} />
+            <Text style={[styles.text, { color: textColor }]}>{label}</Text>
+          </TouchableOpacity>
+        );
+      })}
     </View>
   );
 }
