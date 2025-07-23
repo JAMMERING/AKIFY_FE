@@ -1,5 +1,6 @@
 import { fonts } from '@/styles/fonts';
 import { semanticColor } from '@/styles/semantic-color';
+import { semanticNumber } from '@/styles/semantic-number';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
@@ -23,10 +24,10 @@ const MainButton = ({ children, onPress, disabled }: MainButtonProps) => {
 const styles = StyleSheet.create({
   button: {
     width: '100%',
-    paddingVertical: 14,
+    paddingVertical: semanticNumber.spacing[14],
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 12,
+    borderRadius: semanticNumber.borderRadius.lg,
   },
   text: {
     fontFamily: fonts.family.semibold,
@@ -34,10 +35,10 @@ const styles = StyleSheet.create({
     color: semanticColor.text.buttonMain,
   },
   enabled: {
-    backgroundColor: '#1E1E1F',
+    backgroundColor: semanticColor.button.mainEnabled,
   },
   disabled: {
-    backgroundColor: '#BFC0C4',
+    backgroundColor: semanticColor.button.mainDisabled,
   },
 });
 
