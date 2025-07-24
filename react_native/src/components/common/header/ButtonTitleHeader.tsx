@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { fonts } from '@/styles/fonts';
 import { semanticColor } from '@/styles/semantic-color';
 import { HeaderProps } from '@/interfaces/headers';
+import { semanticNumber } from '@/styles/semantic-number';
 
 function ButtonTitleHeader({ title, leftChilds, rightChilds = [] }: HeaderProps) {
   return (
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 2,
+    paddingVertical: semanticNumber.spacing[2],
     height: 48,
   },
   titleWrapper: {
