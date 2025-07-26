@@ -23,6 +23,16 @@ const semanticColor = {
     chipDelivery: colors.brand.primary[700],
     chipDark: colors.brand.primary[400],
     chipRed: colors.scale.red[400],
+
+    buttonMain: colors.neutral.white,
+    buttonMainPressed: colors.neutral[100],
+    buttonMainDisabled: colors.neutral[400],
+    buttonMainBrand: colors.brand.primary[400],
+    buttonMainBrandPressed: colors.brand.primary[200],
+    buttonMainBrandDisabled: colors.brand.primary[50],
+    buttonSub: colors.neutral[800],
+    buttonSubPressed: colors.neutral[700],
+    buttonSubDisabled: colors.neutral[400],
   },
 
   icon: {
