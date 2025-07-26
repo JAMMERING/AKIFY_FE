@@ -1,7 +1,8 @@
 import { fonts } from '@/styles/fonts';
 import { semanticColor } from '@/styles/semantic-color';
 import { semanticNumber } from '@/styles/semantic-number';
-import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import VariantButton from '../button/VariantButton';
 
 type MyUserCardProps = {
   profileImage: string | null;
@@ -9,7 +10,7 @@ type MyUserCardProps = {
   userId: string;
 };
 
-// 버튼 컴포넌트 merge 후 수정 예정
+// 버튼 컴포넌트 수정 후 수정 예정
 function MyUserCard({ profileImage, nickname, userId }: MyUserCardProps) {
   return (
     <View style={styles.myUserCard}>
@@ -26,9 +27,7 @@ function MyUserCard({ profileImage, nickname, userId }: MyUserCardProps) {
           <Text style={styles.userIdText}>{userId}</Text>
         </View>
       </View>
-      <TouchableOpacity>
-        <Text>버튼</Text>
-      </TouchableOpacity>
+      <VariantButton theme="sub" children="내 정보 편집" onPress={() => Alert.alert('내 정보 편집', '내 정보 편집')} />
     </View>
   );
 }
