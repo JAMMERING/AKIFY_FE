@@ -1,27 +1,19 @@
-import {
-  BUTTON_STYLE,
-  ButtonState,
-  ButtonTheme,
-} from '@/constants/ButtonStyle';
+import { BUTTON_STYLE, ButtonState, ButtonTheme } from '@/constants/ButtonStyle';
 import { fonts } from '@/styles/fonts';
+import { semanticNumber } from '@/styles/semantic-number';
 import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 
 interface VariantButtonProps {
+  children: string;
   theme?: ButtonTheme;
   isLarge?: boolean;
-  children: string;
-  onPress: () => void;
   disabled?: boolean;
+  isFull?: boolean;
+  onPress: () => void;
 }
 
-const VariantButton = ({
-  theme = 'main',
-  isLarge,
-  children,
-  onPress,
-  disabled,
-}: VariantButtonProps) => {
+const VariantButton = ({ children, theme = 'main', isLarge, disabled, isFull, onPress }: VariantButtonProps) => {
   const [buttonState, setButtonState] = useState<ButtonState>('enabled');
   const currentColorStyle = useMemo(() => {
     return BUTTON_STYLE[theme][buttonState];
@@ -45,15 +37,9 @@ const VariantButton = ({
       disabled={disabled}
       style={[
         isLarge ? styles.largeButton : styles.smallButton,
-        { backgroundColor: currentColorStyle.backgroundColor },
-      ]}
-    >
-      <Text
-        style={[
-          isLarge ? styles.largeText : styles.smallText,
-          { color: currentColorStyle.textColor },
-        ]}
-      >
+        { backgroundColor: currentColorStyle.backgroundColor, alignSelf: isFull ? 'stretch' : 'flex-start' },
+      ]}>
+      <Text style={[isLarge ? styles.largeText : styles.smallText, { color: currentColorStyle.textColor }]}>
         {children}
       </Text>
     </Pressable>
@@ -62,10 +48,9 @@ const VariantButton = ({
 
 const styles = StyleSheet.create({
   largeButton: {
-    alignSelf: 'flex-start',
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-    borderRadius: 12,
+    paddingVertical: semanticNumber.spacing[14],
+    paddingHorizontal: semanticNumber.spacing[16],
+    borderRadius: semanticNumber.borderRadius.lg,
   },
   largeText: {
     fontFamily: fonts.family.semibold,
@@ -73,10 +58,9 @@ const styles = StyleSheet.create({
     lineHeight: fonts.lineHeight.LG,
   },
   smallButton: {
-    alignSelf: 'flex-start',
-    paddingVertical: 2,
-    paddingHorizontal: 12,
-    borderRadius: 8,
+    paddingVertical: semanticNumber.spacing[2],
+    paddingHorizontal: semanticNumber.spacing[10],
+    borderRadius: semanticNumber.borderRadius.md,
   },
   smallText: {
     fontFamily: fonts.family.medium,
