@@ -10,57 +10,31 @@ interface TextFieldProps {
   placeholder: string;
   inputText: string;
   setInputText: React.Dispatch<React.SetStateAction<string>>;
-  isVaild?: boolean;
+  isValid?: boolean;
   validState?: boolean;
   validText?: string;
 }
 
-const TextField = ({
-  label,
-  placeholder,
-  inputText,
-  setInputText,
-  isVaild,
-  validState,
-  validText,
-}: TextFieldProps) => {
+const TextField = ({ label, placeholder, inputText, setInputText, isValid, validState, validText }: TextFieldProps) => {
+  const isError = isValid && !validState;
+  const labelColor = !isValid || validState ? semanticColor.text.secondary : semanticColor.text.critical;
+  const inputStyle = [styles.input, isError && { borderColor: semanticColor.border.critical }];
+  const validationTextColor = validState ? semanticColor.text.success : semanticColor.text.critical;
+
   return (
     <View style={styles.container}>
-      <Text
-        style={[
-          styles.label,
-          {
-            color:
-              !isVaild || validState
-                ? semanticColor.text.secondary
-                : semanticColor.text.critical,
-          },
-        ]}
-      >
-        {label}
-      </Text>
+      <Text style={[styles.label, { color: labelColor }]}>{label}</Text>
       <TextInput
         value={inputText}
-        style={styles.input}
+        style={inputStyle}
         placeholder={placeholder}
         placeholderTextColor={semanticColor.text.tertiary}
         onChangeText={setInputText}
       />
-      {isVaild && (
+      {isValid && (
         <View style={styles.validContainer}>
           {validState ? <IconCheck /> : <IconAlertCircle />}
-          <Text
-            style={[
-              styles.validText,
-              {
-                color: validState
-                  ? semanticColor.text.success
-                  : semanticColor.text.critical,
-              },
-            ]}
-          >
-            {validText}
-          </Text>
+          <Text style={[styles.validText, { color: validationTextColor }]}>{validText}</Text>
         </View>
       )}
     </View>
@@ -73,7 +47,6 @@ const styles = StyleSheet.create({
     gap: semanticNumber.spacing[8],
   },
   label: {
-    color: semanticColor.text.secondary,
     fontFamily: fonts.family.semibold,
     fontSize: fonts.size.MD,
     lineHeight: fonts.lineHeight.MD,
@@ -86,7 +59,7 @@ const styles = StyleSheet.create({
     borderColor: semanticColor.border.light,
     backgroundColor: semanticColor.surface.white,
     color: semanticColor.text.primary,
-    //fontFamily: fonts.family.regular,
+    fontFamily: fonts.family.regular,
     fontSize: fonts.size.MD,
     lineHeight: fonts.lineHeight.MD,
   },
@@ -96,7 +69,6 @@ const styles = StyleSheet.create({
     gap: semanticNumber.spacing[4],
   },
   validText: {
-    color: semanticColor.text.critical,
     fontFamily: fonts.family.regular,
     fontSize: fonts.size['2XS'],
     lineHeight: fonts.lineHeight['2XS'],
