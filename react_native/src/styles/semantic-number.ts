@@ -27,10 +27,12 @@ const semanticNumber = {
     12: numbers[12],
     16: numbers[16],
     20: numbers[20],
+    22: numbers[22],
     24: numbers[24],
     32: numbers[32],
     36: numbers[36],
     40: numbers[40],
+    44: numbers[44],
     48: numbers[48],
 
     1: numbers[1],

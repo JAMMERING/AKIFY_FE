@@ -3,13 +3,7 @@ import { semanticNumber } from '@/styles/semantic-number';
 import { semanticColor } from '@/styles/semantic-color';
 import { fonts } from '@/styles/fonts';
 
-type ChipVariant =
-  | 'condition'
-  | 'default'
-  | 'darkBrand'
-  | 'red'
-  | 'brand'
-  | 'dark';
+type ChipVariant = 'condition' | 'default' | 'darkBrand' | 'red' | 'brand' | 'dark';
 
 type ChipSize = 'small' | 'medium';
 
@@ -24,11 +18,7 @@ function Chip({ icon, text, variant = 'default', size = 'small' }: ChipProps) {
   return (
     <View style={[styles.chipBase, variantStyles[variant], sizeStyles[size]]}>
       {icon}
-      <Text
-        style={[styles.textBase, variantStyles[variant], textSizeStyles[size]]}
-      >
-        {text}
-      </Text>
+      <Text style={[styles.textBase, variantStyles[variant], textSizeStyles[size]]}>{text}</Text>
     </View>
   );
 }
